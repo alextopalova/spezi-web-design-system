@@ -36,8 +36,9 @@ export interface CardProps
  * <Card>
  *   <CardHeader>
  *     <CardTitle>Card Title</CardTitle>
+ *     <CardDescription>Card description</CardDescription>
  *   </CardHeader>
- *   <div className="p-5">Card content goes here</div>
+ *   <CardContent>Card content goes here</CardContent>
  * </Card>
  * ```
  *
@@ -69,9 +70,9 @@ type CardHeaderProps = ComponentProps<"div">;
  * <Card>
  *   <CardHeader>
  *     <CardTitle>Card Title</CardTitle>
- *     <p className="text-sm text-muted-foreground">Card description</p>
+ *     <CardDescription>Card description</CardDescription>
  *   </CardHeader>
- *   <div className="p-5">Card content</div>
+ *   <CardContent>Card content goes here</CardContent>
  * </Card>
  * ```
  */

@@ -28,7 +28,7 @@ type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {};
 
-export const WithHeader: Story = {
+export const WithTitle: Story = {
   args: {
     children: (
       <>
@@ -41,7 +41,7 @@ export const WithHeader: Story = {
   },
 };
 
-export const WithHeaderAndDescription: Story = {
+export const WithTitleAndDescription: Story = {
   args: {
     children: (
       <>
