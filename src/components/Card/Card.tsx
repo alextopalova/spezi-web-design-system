@@ -78,7 +78,7 @@ type CardHeaderProps = ComponentProps<"div">;
 export const CardHeader = ({ className, ...props }: CardHeaderProps) => (
   <header
     data-slot="card-header"
-    className={cn("mb-4 flex items-center gap-2 px-5 pt-4", className)}
+    className={cn("mb-4 flex flex-col gap-1 px-5 pt-4", className)}
     {...props}
   />
 );
@@ -109,3 +109,81 @@ export const CardTitle = ({ className, asChild, ...props }: CardTitleProps) => {
     />
   );
 };
+
+type CardDescriptionProps = ComponentProps<"p">;
+
+/**
+ * Description component for {@link CardHeader|card headers}.
+ *
+ * Renders muted secondary text below {@link CardTitle}. Typically wrapped by {@link CardHeader}.
+ *
+ * @example
+ * ```tsx
+ * <CardHeader>
+ *   <CardTitle>Settings</CardTitle>
+ *   <CardDescription>Manage your account preferences</CardDescription>
+ * </CardHeader>
+ * ```
+ */
+export const CardDescription = ({
+  className,
+  ...props
+}: CardDescriptionProps) => (
+  <p
+    data-slot="card-description"
+    className={cn("text-muted-foreground text-sm", className)}
+    {...props}
+  />
+);
+
+type CardContentProps = ComponentProps<"div">;
+
+/**
+ * Content area component for {@link Card}.
+ *
+ * Provides consistent horizontal padding and bottom spacing for card body content.
+ * Replaces the manual `<div className="p-5">` pattern.
+ *
+ * @example
+ * ```tsx
+ * <Card>
+ *   <CardHeader>
+ *     <CardTitle>Overview</CardTitle>
+ *   </CardHeader>
+ *   <CardContent>Your content here</CardContent>
+ * </Card>
+ * ```
+ */
+export const CardContent = ({ className, ...props }: CardContentProps) => (
+  <div
+    data-slot="card-content"
+    className={cn("px-5 pb-5", className)}
+    {...props}
+  />
+);
+
+type CardFooterProps = ComponentProps<"footer">;
+
+/**
+ * Footer component for {@link Card}.
+ *
+ * Provides consistent spacing for a right-aligned smaller line of text at the bottom of a card.
+ *
+ * @example
+ * ```tsx
+ * <Card>
+ *   <CardContent>Main content</CardContent>
+ *   <CardFooter>Synced from Apple Health</CardFooter>
+ * </Card>
+ * ```
+ */
+export const CardFooter = ({ className, ...props }: CardFooterProps) => (
+  <footer
+    data-slot="card-footer"
+    className={cn(
+      "text-muted-foreground px-5 pb-4 text-right text-sm",
+      className,
+    )}
+    {...props}
+  />
+);
